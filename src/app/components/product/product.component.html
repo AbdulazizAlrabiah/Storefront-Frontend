@@ -1,0 +1,11 @@
+<div class="product-container">
+    <img class="product-image" src="{{ product.imageLink }}" [routerLink]="['/product_detail', product.id]">
+    <h4>{{ product.name }}</h4>
+    <h4>${{ product.price }}</h4>
+    <h4 *ngIf="isDetailedView">{{ product.description }}</h4>
+    <select class="select-input" [(ngModel)]="selectedQuantity">
+        <option *ngFor="let val of quantityOptions; let index = index;" [ngValue]="val">{{ val }}</option>
+    </select>
+    <br>
+    <button class="btn btn-primary" (click)="prepareToaddToCart()">Add to Cart</button>
+</div>
