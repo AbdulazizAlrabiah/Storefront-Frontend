@@ -1,0 +1,22 @@
+<div class="register-wrapper" fxLayoutAlign="center center" fxLayout="row">
+    <mat-card class="box">
+        <mat-card-header>
+            <mat-card-title>User Registration</mat-card-title>
+        </mat-card-header>
+        <form #form="ngForm" (ngSubmit)="onRegister()" class="example-form">
+            <mat-card-content>
+                <!-- TODO: Loop -->
+                <mat-form-field class="example-full-width">
+                    <input name="First Name" required minlength="2" matInput placeholder="First Name" [(ngModel)]="firstName">
+                </mat-form-field>
+                <mat-form-field class="example-full-width">
+                    <input name="Last Name" required minlength="2" matInput placeholder="Last Name" [(ngModel)]="lastName">
+                </mat-form-field>
+                <mat-form-field class="example-full-width">
+                    <input name="Password" required minlength="8" matInput placeholder="Password" type="password" [(ngModel)]="password">
+                </mat-form-field>
+            </mat-card-content>
+            <button type="submit" [disabled]="form.invalid" class="btn btn-primary btn-block">Register</button>
+        </form>
+    </mat-card>
+  </div>
