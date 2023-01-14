@@ -16,6 +16,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MaterialModule } from './material.module';
 import { ProductInCartComponent } from './components/productincart/productincart.component';
 import { PaymentFormComponent } from './components/paymentform/paymentform.component';
+import { MatDialogModule } from '@angular/material/dialog';
+import { ProductPlaceDialogComponent } from './components/productplacedialog/productplacedialog.component'
 
 @NgModule({
   declarations: [
@@ -28,7 +30,8 @@ import { PaymentFormComponent } from './components/paymentform/paymentform.compo
     HeaderComponent,
     CreateUserComponent,
     ProductInCartComponent,
-    PaymentFormComponent
+    PaymentFormComponent,
+    ProductPlaceDialogComponent
   ],
   imports: [
     BrowserModule,
@@ -38,7 +41,8 @@ import { PaymentFormComponent } from './components/paymentform/paymentform.compo
     FlexLayoutModule,
     FormsModule, 
     ReactiveFormsModule, 
-    MaterialModule
+    MaterialModule, 
+    MatDialogModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

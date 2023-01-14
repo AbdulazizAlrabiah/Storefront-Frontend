@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Product } from 'src/app/models/product';
+import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
+import { ProductPlaceDialogComponent } from 'src/app/components/productplacedialog/productplacedialog.component';
 import { OrderService } from 'src/app/services/order.service';
 import { ProductService } from 'src/app/services/product.service';
 
@@ -10,7 +11,7 @@ import { ProductService } from 'src/app/services/product.service';
 })
 export class ProductListComponent implements OnInit {
 
-  constructor(public productService: ProductService, private orderService: OrderService) {};
+  constructor(public productService: ProductService, private orderService: OrderService, private diaglog: MatDialog) {};
   
   ngOnInit(): void {
     this.getProducts();
@@ -25,8 +26,24 @@ export class ProductListComponent implements OnInit {
     const productId = json['productId']
     const quantity = json['quantity']
 
-    this.orderService.addProductToUserOrder(productId, quantity).subscribe( (_) => {});
-
+    this.orderService.addProductToUserOrder(productId, quantity).subscribe( (_) => {
+      this.openSuccessDialog();
+    });
   }
 
+  openSuccessDialog() {
+    const dialogConfiguration = new MatDialogConfig();
+
+    dialogConfiguration.autoFocus = false;
+
+    dialogConfiguration.position = {
+        bottom: '0',
+      }      
+
+      this.diaglog.open(ProductPlaceDialogComponent, dialogConfiguration);
+
+      setTimeout(() => {
+        this.diaglog.closeAll();
+      }, 850);
+    }
 }
