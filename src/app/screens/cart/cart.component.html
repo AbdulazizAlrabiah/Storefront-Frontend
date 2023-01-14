@@ -1,0 +1,4 @@
+<div class="row">   
+    <app-productincart class="col-sm-4" [order]="order" [totalPrice]="calculateTotalPrice()" (removeFromCart)="removeFromCart($event)"></app-productincart>
+    <app-paymentform class="col-sm-8" (submitOrder)="submitOrder($event)"></app-paymentform>
+</div>

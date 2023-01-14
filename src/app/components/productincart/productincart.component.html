@@ -1,0 +1,20 @@
+<div class="all-products-container">
+    <div *ngIf="totalPrice !== 0; else empty">
+        <h2>Products:</h2>
+        <div class="product-container row" *ngFor="let product of order.products">
+            <img class="product-image col-sm-2" src="{{ product.product.imageLink }}">
+            <div class="col-sm-2">
+                <h4>{{ product.product.name }}</h4>
+                <h4>${{ product.product.price }}</h4>
+                <h3>Amount: {{ product.quantity }}</h3>
+                <button class="btn btn-primary delete"  (click)="removeFromCart.emit(product.product.id)">Delete</button>
+            </div>
+        </div>
+        <div class="row">
+            <h1 class="total-price">Total Price: ${{ totalPrice }}</h1>
+        </div>
+    </div>
+    <ng-template #empty>
+        <h2 style="text-align: center;">There are no products in your cart.</h2>
+    </ng-template>
+</div>

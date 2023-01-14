@@ -1,0 +1,25 @@
+<div class="user-info-wrapper" fxLayout="row" fxLayoutAlign="center start">
+    <mat-card class="box">
+        <mat-card-header>
+            <mat-card-title>Information</mat-card-title>
+        </mat-card-header>
+        <form #form="ngForm" (ngSubmit)="submitOrder.emit(userInfo.fullName)" class="example-form">
+            <mat-card-content>
+                <!-- TODO: Loop -->
+                <h3>Full Name: </h3>
+                <mat-form-field class="example-full-width">
+                    <input name="Full Name" required minlength="3" matInput placeholder="Full Name" [(ngModel)]="userInfo.fullName">
+                </mat-form-field>
+                <h3>Address: </h3>
+                <mat-form-field class="example-full-width">
+                    <input name="Address" required minlength="6" matInput placeholder="Address" [(ngModel)]="userInfo.address">
+                </mat-form-field>
+                <h3>Credit Card: </h3>
+                <mat-form-field class="example-full-width">
+                    <input name="Credit Card" required minlength="16" maxlength="16" matInput placeholder="(16-digit number)" type="password" [(ngModel)]="userInfo.creditCard">
+                </mat-form-field>
+            </mat-card-content>
+            <button type="submit" [disabled]="form.invalid" class="btn btn-primary btn-block">Submit</button>
+        </form>
+    </mat-card>
+  </div>
