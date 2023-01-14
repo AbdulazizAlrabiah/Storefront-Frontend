@@ -4,6 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ProductListComponent } from './screens/productlist/productlist.component';
+import { ProductDetailComponent } from './screens/productdetail/productdetail.component';
 import { ProductComponent } from './components/product/product.component';
 import { HeaderComponent } from './components/header/header.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
@@ -16,6 +17,7 @@ import { MaterialModule } from './material.module';
   declarations: [
     AppComponent,
     ProductListComponent,
+    ProductDetailComponent,
     ProductComponent,
     HeaderComponent,
     CreateUserComponent,
