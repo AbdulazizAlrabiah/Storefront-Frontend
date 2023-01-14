@@ -10,6 +10,7 @@
   
 .product-container {
     margin-top: 64px;
+    margin-bottom: 20px;
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
