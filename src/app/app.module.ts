@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { ProductListComponent } from './screens/productlist/productlist.component';
 import { ProductDetailComponent } from './screens/productdetail/productdetail.component';
 import { CartComponent } from './screens/cart/cart.component';
+import { OrderCompletionComponent } from './screens/ordercompletion/ordercompletion.component';
 import { ProductComponent } from './components/product/product.component';
 import { HeaderComponent } from './components/header/header.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
@@ -22,6 +23,7 @@ import { PaymentFormComponent } from './components/paymentform/paymentform.compo
     ProductListComponent,
     ProductDetailComponent,
     CartComponent,
+    OrderCompletionComponent,
     ProductComponent,
     HeaderComponent,
     CreateUserComponent,
