@@ -2,11 +2,8 @@ import { HttpClient, HttpHeaders, HttpRequest } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { NetworkingConfig } from '../networkingConfig';
 import { UserManagementService } from './user-management.service';
-import { Observable } from 'rxjs';
-import { CloseScrollStrategy } from '@angular/cdk/overlay';
-import { useAnimation } from '@angular/animations';
+import { Observable, of } from 'rxjs';
 import { Order } from '../models/order';
-import { enableDebugTools } from '@angular/platform-browser';
 import { Product } from '../models/product';
 
 @Injectable({
@@ -33,4 +30,10 @@ export class OrderService {
 
     return this.httpClient.delete<Product>(NetworkingConfig.orderActionsAPI, { headers: UserManagementService.getAuthHeader(), body: body });
   }
+
+  // TODO: Implement submitOrder API
+  submitOrder(): Observable<Order> {
+    return of({id: 0, products: [], status: ''});
+  }
+
 }
