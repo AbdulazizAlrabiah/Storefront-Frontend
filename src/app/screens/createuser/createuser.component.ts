@@ -14,11 +14,9 @@ export class CreateUserComponent {
 
   constructor(public userManagementService: UserManagementService, private router: Router) {};
 
-  onRegister() {
-    this.userManagementService.register(this.firstName, this.lastName, this.password).subscribe( (res) => {
-      UserManagementService.token = res
-      this.router.navigate(['product'])
-    })
+  async onRegister() {
+   await this.userManagementService.register(this.firstName, this.lastName, this.password);
+   this.router.navigate(['products']);
   }
 
 }
