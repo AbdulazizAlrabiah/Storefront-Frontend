@@ -12,7 +12,7 @@ const routes: Routes = [
     component: CreateUserComponent,
   },
   {
-    path: 'product',
+    path: 'products',
     component: ProductListComponent,
   },
   {
@@ -24,7 +24,7 @@ const routes: Routes = [
     component: CartComponent,
   },
   {
-    path: 'cart/order_completion',
+    path: 'cart/order_completion/:totalPrice/:fullName',
     component: OrderCompletionComponent,
   },
 ];
