@@ -22,7 +22,6 @@ export class UserManagementService {
     return new Promise((resolve) => {
       this.httpClient.post<String>(NetworkingConfig.registerAPI, { 'firstName': firstName, 'lastName': lastName, 'password': password }).subscribe( (res) => {
         localStorage.setItem('UserToken', res as string);
-        console.log(res);
         resolve();
       });
     })
