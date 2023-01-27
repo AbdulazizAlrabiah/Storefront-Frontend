@@ -8,12 +8,12 @@ jobs:
   docker:
      - image: 'cimg/node:16.17-browsers'
   steps:
+     - checkout
      - browser-tools/install-chrome
      - browser-tools/install-chromedriver
-     - checkout
      - run:
         name: Install Dependencies
-        command: npm i
+        command: npm i --legacy-peer-deps
      - run:
         name: Build
         command: npm run build
