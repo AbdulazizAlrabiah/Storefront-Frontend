@@ -4,12 +4,13 @@ orbs:
  aws-cli: circleci/aws-cli@1.3.1
 jobs:
  build-test-deploy:
+  working_directory: ~/ng-project
   docker:
      - image: 'cimg/node:16.17-browsers'
   steps:
-     - checkout
      - browser-tools/install-chrome
      - browser-tools/install-chromedriver
+     - checkout
      - run:
         name: Install Dependencies
         command: npm i
