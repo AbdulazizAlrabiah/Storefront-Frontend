@@ -10,7 +10,6 @@ jobs:
      - browser-tools/install-chrome
      - browser-tools/install-chromedriver
      - checkout
-     - node/install
      - run:
         name: Install Dependencies
         command: npm i
