@@ -7,7 +7,7 @@ enum NetworkingAPIs {
 
 export class NetworkingConfig {
     
-  static baseURL = 'http://localhost:3000/';
+  static baseURL = 'http://store-front-backend-production.us-east-1.elasticbeanstalk.com/';
 
   // APIs
   static getProductsAPI = this.baseURL + NetworkingAPIs.getProducts;
