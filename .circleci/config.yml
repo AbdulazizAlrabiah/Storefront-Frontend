@@ -28,4 +28,8 @@ jobs:
 workflows:
  build-workflow:
   jobs:
-    - build-test-deploy
+     - build-test-deploy:
+         filters:
+            branches:
+               only:
+                - main
